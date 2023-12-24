@@ -8,37 +8,40 @@ import categoryRoutes from "./routes/categoryRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import cors from "cors";
 
-//configure env
+// Configure env
 dotenv.config();
 
-//databse config
+// Database config
 connectDB();
 
-//rest object
+// Create an Express app
 const app = express();
 
-//middelwares
-app.use(cors());
+// Middleware
+app.use(cors({
+  origin: 'https://eccomerce-s49e.onrender.com',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true // Enable credentials if needed (e.g., for cookies, authorization headers)
+}));
 app.use(express.json());
 app.use(morgan("dev"));
 
-//routes
+// Routes
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
 
-//rest api
+// REST API
 app.get("/", (req, res) => {
-  res.send("<h1>Welcome to ecommerce app</h1>");
+  res.send("<h1>Welcome to the ecommerce app</h1>");
 });
 
-//PORT
+// Define the port
 const PORT = process.env.PORT || 8080;
 
-//run listen
+// Run the server
 app.listen(PORT, () => {
   console.log(
-    `Server Running on ${process.env.DEV_MODE} mode on port ${PORT}`.bgCyan
-      .white
+    `Server running in ${process.env.DEV_MODE} mode on port ${PORT}`.bgCyan.white
   );
 });

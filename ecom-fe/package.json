@@ -1,6 +1,6 @@
 {
-  "name": "client",
-  "proxy": "http://localhost:8080",
+  "name": "ecom-fe",
+  "proxy": "https://eccomerce-s49e.onrender.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

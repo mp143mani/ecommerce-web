@@ -1,14 +1,14 @@
 {
-  "name": "Ecommerce-app-2023",
+  "name": "ecom-be",
   "version": "1.0.0",
   "description": "ecommerce rest api",
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js",
     "client": "npm start --prefix ./ecom-fe",
-    "dev": "concurrently \"npm run server\" \"npm run ecom-fe\""
+    "dev": "concurrently \"npm run server\" \"npm run ecom-fe\"",
+    "start": "node server.js",
+    "server": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
