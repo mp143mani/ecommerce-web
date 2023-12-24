@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "client": "npm start --prefix ./ecom-fe",
-    "dev": "concurrently \"npm run server\" \"npm run ecom-fe\"",
+    "dev": "concurrently \"npm start\" \"npm run ecom-fe\"",
     "start": "node server.js",
     "server": "nodemon server.js"
   },
